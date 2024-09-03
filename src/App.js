@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Ejercicios from './Ejercicios';
+import './estilos.css';
 
-function App() {
+const App = () => {
+  const [bodyPart, setBodyPart] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Buscador de Ejercicios</h1>
+      <select
+        id="bodyPart"
+        value={bodyPart}
+        onChange={(e) => setBodyPart(e.target.value)}
+      >
+        <option value="">--Seleccionar--</option>
+        <option value="pecho">Pecho</option>
+        <option value="espalda">Espalda</option>
+        <option value="brazos">Brazos</option>
+        <option value="antebrazo">Antebrazos</option>
+        <option value="hombros">Hombros</option>
+        <option value="abdominales">Abdominales</option>
+        <option value="gluteos">Gluteos</option>
+        <option value="piernas">Piernas</option>
+      </select>
+
+      <Ejercicios bodyPart={bodyPart} />
     </div>
   );
-}
+};
 
 export default App;
+
