@@ -8,6 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Buscador de Ejercicios</h1>
+      <label> Selecciona parte de tu cuerpo:</label>
       <select
         id="bodyPart"
         value={bodyPart}
@@ -22,6 +23,7 @@ const App = () => {
         <option value="abdominales">Abdominales</option>
         <option value="gluteos">Gluteos</option>
         <option value="piernas">Piernas</option>
+        <option value="adultomayor">Adulto Mayor</option>
       </select>
 
       <Ejercicios bodyPart={bodyPart} />
@@ -30,3 +32,4 @@ const App = () => {
 };
 
 export default App;
+
